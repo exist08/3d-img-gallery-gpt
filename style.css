@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+}
+
+:root {
+    --image-margin-from-center: 650px;
+}
+
+.gallery {
+    perspective: 3000px;
+}
+
+@media screen and (max-width: 768px) {
+    .gallery {
+        scale: .5;
+    }
+}
+
+.carousel {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate 15s infinite linear;
+    background-image: linear-gradient(135deg, #333, #333 50%, #333333aa 50%, #33333355);
+    background-size: 50px 50px;
+    /* background: red; */
+}
+
+.carousel img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* backface-visibility: hidden; */
+    transition: 1s;
+}
+
+/* Manually set the transformation for each image */
+.carousel img:nth-child(1) {
+    transform: rotateY(0deg) translateZ(var(--image-margin-from-center));
+}
+
+.carousel img:nth-child(2) {
+    transform: rotateY(calc(360deg / 12 * 1)) translateZ(var(--image-margin-from-center));
+}
+
+.carousel img:nth-child(3) {
+    transform: rotateY(calc(360deg / 12 * 2)) translateZ(var(--image-margin-from-center));
+}
+
+.carousel img:nth-child(4) {
+    transform: rotateY(calc(360deg / 12 * 3)) translateZ(var(--image-margin-from-center));
+}
+
+.carousel img:nth-child(5) {
+    transform: rotateY(calc(360deg / 12 * 4)) translateZ(var(--image-margin-from-center));
+}
+
+.carousel img:nth-child(6) {
+    transform: rotateY(calc(360deg / 12 * 5)) translateZ(var(--image-margin-from-center));
+}
+
+.carousel img:nth-child(7) {
+    transform: rotateY(calc(360deg / 12 * 6)) translateZ(var(--image-margin-from-center));
+}
+
+.carousel img:nth-child(8) {
+    transform: rotateY(calc(360deg / 12 * 7)) translateZ(var(--image-margin-from-center));
+}
+
+.carousel img:nth-child(9) {
+    transform: rotateY(calc(360deg / 12 * 8)) translateZ(var(--image-margin-from-center));
+}
+
+.carousel img:nth-child(10) {
+    transform: rotateY(calc(360deg / 12 * 9)) translateZ(var(--image-margin-from-center));
+}
+
+.carousel img:nth-child(11) {
+    transform: rotateY(calc(360deg / 12 * 10)) translateZ(var(--image-margin-from-center));
+}
+
+.carousel img:nth-child(12) {
+    transform: rotateY(calc(360deg / 12 * 11)) translateZ(var(--image-margin-from-center));
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateX(-10deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotateX(-10deg) rotateY(360deg);
+    }
+}
